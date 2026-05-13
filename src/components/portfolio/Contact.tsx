@@ -1,0 +1,104 @@
+import { useState } from "react";
+import { Mail, Linkedin, Instagram, Send, Github } from "lucide-react";
+import { toast } from "sonner";
+import { Reveal, SectionHeading } from "./Reveal";
+
+const socials = [
+  { icon: Mail, label: "Email", value: "mayank.pandey@example.com", href: "mailto:mayank.pandey@example.com" },
+  { icon: Linkedin, label: "LinkedIn", value: "/in/mayankpandey", href: "https://linkedin.com" },
+  { icon: Instagram, label: "Instagram", value: "@mayank.codes", href: "https://instagram.com" },
+  { icon: Github, label: "GitHub", value: "/mayankpandey", href: "https://github.com" },
+];
+
+export function Contact() {
+  const [sending, setSending] = useState(false);
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+    setTimeout(() => {
+      setSending(false);
+      toast.success("Message sent — I'll get back to you soon!");
+      (e.target as HTMLFormElement).reset();
+    }, 900);
+  };
+
+  return (
+    <section id="contact" className="py-24 md:py-32 relative">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <SectionHeading
+          kicker="Contact"
+          title={<>Let's build <span className="gradient-text">something great</span> together.</>}
+          description="Open to full-time roles, freelance projects, and collaborations. Drop a message and I'll respond within 24 hours."
+        />
+
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-6">
+          <Reveal>
+            <div className="glass rounded-3xl p-6 md:p-8 h-full">
+              <h3 className="font-display text-lg font-semibold mb-6">Reach me on</h3>
+              <div className="space-y-3">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener"
+                    className="group flex items-center gap-4 p-3 rounded-2xl hover:bg-secondary/50 transition-colors"
+                  >
+                    <div className="size-10 rounded-xl grid place-items-center bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <s.icon className="size-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-xs text-muted-foreground">{s.label}</div>
+                      <div className="text-sm font-medium truncate">{s.value}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150}>
+            <form onSubmit={onSubmit} className="glass rounded-3xl p-6 md:p-8 space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <Field label="Name" name="name" placeholder="Your name" />
+                <Field label="Email" name="email" type="email" placeholder="you@example.com" />
+              </div>
+              <Field label="Subject" name="subject" placeholder="What's this about?" />
+              <div>
+                <label className="text-xs text-muted-foreground font-medium">Message</label>
+                <textarea
+                  required
+                  name="message"
+                  rows={5}
+                  placeholder="Tell me about your project…"
+                  className="mt-1.5 w-full bg-secondary/40 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={sending}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--gradient-primary)] text-primary-foreground px-5 py-3 text-sm font-medium hover:scale-[1.01] transition-transform glow-primary disabled:opacity-60"
+              >
+                {sending ? "Sending…" : <>Send Message <Send className="size-4" /></>}
+              </button>
+            </form>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Field({ label, ...props }: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) {
+  return (
+    <div>
+      <label className="text-xs text-muted-foreground font-medium">{label}</label>
+      <input
+        required
+        {...props}
+        className="mt-1.5 w-full bg-secondary/40 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 transition-all"
+      />
+    </div>
+  );
+}
