@@ -68,7 +68,7 @@ export function Hero() {
             <a href="#contact" className="inline-flex items-center gap-2 rounded-full glass px-5 py-3 text-sm font-medium hover:border-primary/50 transition-colors">
               <Mail className="size-4" /> Contact Me
             </a>
-            <a href="/Mayank_Resume.pdf" download="Mayank_Resume.pdf" target="_self" rel="noopener" className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://pdf.wondershare.com/app/id/jFiYYQdoAI-6RmVGHw22jB9c5XccaEvQ7ozlrbNJKtTQpEHoMUmGNyxMfWy8LXRyhHxxmbrgTxTdu7DNeloPuQ?t=share" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               <Download className="size-4" /> Resume
             </a>
           </div>
