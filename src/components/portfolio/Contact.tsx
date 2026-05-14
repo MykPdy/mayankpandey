@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, Linkedin, Instagram, Send, Github } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 import { Reveal, SectionHeading } from "./Reveal";
 
 const socials = [
@@ -10,17 +11,29 @@ const socials = [
   { icon: Github, label: "GitHub", value: "/mayankpandey", href: "https://github.com" },
 ];
 
+const EMAILJS_SERVICE_ID = "service_a7iy27u";
+const EMAILJS_TEMPLATE_ID = "template_5ccelka";
+const EMAILJS_PUBLIC_KEY = "8s7W1b53o4Kwe21o3";
+
 export function Contact() {
   const [sending, setSending] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setSending(true);
-    setTimeout(() => {
-      setSending(false);
+    try {
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      });
       toast.success("Message sent — I'll get back to you soon!");
-      (e.target as HTMLFormElement).reset();
-    }, 900);
+      form.reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      toast.error("Failed to send message. Please try again or email directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
