@@ -10,10 +10,10 @@ export function Footer() {
           <span className="text-muted-foreground hidden sm:inline">— Built with care.</span>
         </div>
         <div className="flex items-center gap-4 text-muted-foreground">
-          <a href="https://github.com" aria-label="GitHub" className="hover:text-primary transition-colors"><Github className="size-4" /></a>
-          <a href="https://linkedin.com" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin className="size-4" /></a>
-          <a href="https://instagram.com" aria-label="Instagram" className="hover:text-primary transition-colors"><Instagram className="size-4" /></a>
-          <a href="mailto:mayank@example.com" aria-label="Email" className="hover:text-primary transition-colors"><Mail className="size-4" /></a>
+          <a href="https://github.com/MykPdy" target="_blank" rel="noopener" aria-label="GitHub" className="hover:text-primary transition-colors"><Github className="size-4" /></a>
+          <a href="https://www.linkedin.com/in/mayank-pandey-1a16b7240/" target="_blank" rel="noopener" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin className="size-4" /></a>
+          <a href="https://instagram.com/mykpdy" target="_blank" rel="noopener" aria-label="Instagram" className="hover:text-primary transition-colors"><Instagram className="size-4" /></a>
+          <a href="mailto:mymayankpandey@gmail.com" aria-label="Email" className="hover:text-primary transition-colors"><Mail className="size-4" /></a>
         </div>
         <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Mayank Pandey. All rights reserved.</p>
       </div>
