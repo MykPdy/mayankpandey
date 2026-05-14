@@ -5,10 +5,10 @@ import emailjs from "@emailjs/browser";
 import { Reveal, SectionHeading } from "./Reveal";
 
 const socials = [
-  { icon: Mail, label: "Email", value: "mayank.pandey@example.com", href: "mailto:mayank.pandey@example.com" },
-  { icon: Linkedin, label: "LinkedIn", value: "/in/mayankpandey", href: "https://linkedin.com" },
-  { icon: Instagram, label: "Instagram", value: "@mayank.codes", href: "https://instagram.com" },
-  { icon: Github, label: "GitHub", value: "/mayankpandey", href: "https://github.com" },
+  { icon: Mail, label: "Email", value: "mymayankpandey@gmail.com", href: "mailto:mymayankpandey@gmail.com" },
+  { icon: Linkedin, label: "LinkedIn", value: "/in/mayank-pandey-1a16b7240", href: "https://www.linkedin.com/in/mayank-pandey-1a16b7240/" },
+  { icon: Instagram, label: "Instagram", value: "@mykpdy", href: "https://instagram.com/mykpdy" },
+  { icon: Github, label: "GitHub", value: "/MykPdy", href: "https://github.com/MykPdy" },
 ];
 
 const EMAILJS_SERVICE_ID = "service_a7iy27u";

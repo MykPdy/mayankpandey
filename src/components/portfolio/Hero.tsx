@@ -74,9 +74,9 @@ export function Hero() {
           </div>
 
           <div className="mt-10 flex items-center gap-5 text-muted-foreground">
-            <a href="https://github.com" aria-label="GitHub" className="hover:text-primary hover:-translate-y-0.5 transition-all"><Github className="size-5" /></a>
-            <a href="https://linkedin.com" aria-label="LinkedIn" className="hover:text-primary hover:-translate-y-0.5 transition-all"><Linkedin className="size-5" /></a>
-            <a href="mailto:mayank@example.com" aria-label="Email" className="hover:text-primary hover:-translate-y-0.5 transition-all"><Mail className="size-5" /></a>
+            <a href="https://github.com/MykPdy" target="_blank" rel="noopener" aria-label="GitHub" className="hover:text-primary hover:-translate-y-0.5 transition-all"><Github className="size-5" /></a>
+            <a href="https://www.linkedin.com/in/mayank-pandey-1a16b7240/" target="_blank" rel="noopener" aria-label="LinkedIn" className="hover:text-primary hover:-translate-y-0.5 transition-all"><Linkedin className="size-5" /></a>
+            <a href="mailto:mymayankpandey@gmail.com" aria-label="Email" className="hover:text-primary hover:-translate-y-0.5 transition-all"><Mail className="size-5" /></a>
           </div>
         </div>
 
