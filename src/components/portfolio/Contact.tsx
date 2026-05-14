@@ -17,10 +17,24 @@ const EMAILJS_PUBLIC_KEY = "8s7W1b53o4Kwe21o3";
 
 export function Contact() {
   const [sending, setSending] = useState(false);
+  const [formLoadedAt] = useState(() => Date.now());
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
+    // Honeypot: bots typically fill all fields, including hidden ones
+    const honeypot = (form.elements.namedItem("website") as HTMLInputElement | null)?.value;
+    if (honeypot) {
+      // Silently pretend success to avoid signaling the trap
+      toast.success("Message sent — I'll get back to you soon!");
+      form.reset();
+      return;
+    }
+    // Time trap: humans take more than 3s to fill the form
+    if (Date.now() - formLoadedAt < 3000) {
+      toast.error("Please take a moment to review your message before sending.");
+      return;
+    }
     setSending(true);
     try {
       await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form, {
@@ -73,6 +87,18 @@ export function Contact() {
 
           <Reveal delay={150}>
             <form onSubmit={onSubmit} className="glass rounded-3xl p-6 md:p-8 space-y-4">
+              {/* Honeypot field — hidden from users, bots will fill it */}
+              <div aria-hidden="true" className="absolute left-[-9999px] w-px h-px overflow-hidden">
+                <label>
+                  Website
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </label>
+              </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <Field label="Name" name="name" placeholder="Your name" />
                 <Field label="Email" name="email" type="email" placeholder="you@example.com" />
