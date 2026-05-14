@@ -9,7 +9,6 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Skills } from "@/components/portfolio/Skills";
 import { Projects } from "@/components/portfolio/Projects";
 import { Testimonials } from "@/components/portfolio/Testimonials";
-import { Certifications } from "@/components/portfolio/Certifications";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { ScrollProgress } from "@/components/portfolio/ScrollProgress";
@@ -32,7 +31,6 @@ function Index() {
         <Skills />
         <Projects />
         <Testimonials />
-        <Certifications />
         <Contact />
       </main>
       <Footer />
