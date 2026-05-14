@@ -75,11 +75,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Mayank Pandey — Software Developer | Salesforce & Cloud" },
       { name: "description", content: "Portfolio of Mayank Pandey — Software Developer specializing in Salesforce Service Cloud, AWS integrations, backend systems, and AI-driven applications." },
       { name: "author", content: "Mayank Pandey" },
-      { property: "og:title", content: "Mayank Pandey — Software Developer" },
-      { property: "og:description", content: "Salesforce & Cloud Engineer | Backend & AI Enthusiast" },
+      { property: "og:title", content: "Mayank Pandey — Software Developer | Salesforce & Cloud" },
+      { property: "og:description", content: "Portfolio of Mayank Pandey — Software Developer specializing in Salesforce Service Cloud, AWS integrations, backend systems, and AI-driven applications." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Mayank Pandey — Software Developer | Salesforce & Cloud" },
+      { name: "twitter:description", content: "Portfolio of Mayank Pandey — Software Developer specializing in Salesforce Service Cloud, AWS integrations, backend systems, and AI-driven applications." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/65fb056a-2d52-4cd1-b112-2d0f42e7ff65/id-preview-f4f6457f--c05fd480-a205-4bf1-a53a-ec2e85aff059.lovable.app-1778749907889.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/65fb056a-2d52-4cd1-b112-2d0f42e7ff65/id-preview-f4f6457f--c05fd480-a205-4bf1-a53a-ec2e85aff059.lovable.app-1778749907889.png" },
     ],
     links: [
       {
