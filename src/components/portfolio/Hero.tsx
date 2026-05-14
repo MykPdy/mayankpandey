@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
-import portrait from "@/assets/mayank-portrait.jpg";
+import portrait from "@/assets/mayank-portrait.png";
 
 const roles = [
   "Salesforce & Cloud Engineer",
